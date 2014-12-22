@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <title>Datetime example - Sonatra Jquery Datetime Picker</title>
+    <link href="../css/datetime-picker.css" rel="stylesheet">
+</head>
+
+<body>
+<form name="form" method="post" action="">
+    <div id="form">
+        <div>
+            <label for="form_datetime" class="required">Datetime field</label>
+            <input type="text" id="form_datetime"
+                   name="form[datetime]"
+                   required="required" data-locale="en"
+                   data-date-picker="true"
+                   data-time-picker="true"
+                   data-time-picker-first="false"
+                   data-open-focus="true"
+                   data-format="M/D/YYYY, h:mm:ss A"
+                   data-with-minutes="true"
+                   data-with-seconds="true"
+                   data-hour-step="1"
+                   data-minute-step="1"
+                   data-datetime-picker="true"
+                   data-button-id="form_datetime_datetime_btn"
+                   value="2/23/2014, 2:46:23 PM">
+        </div>
+        <div>
+            <button type="submit" id="form_send" name="form[send]">Send</button>
+        </div>
+    </div>
+</form>
+<script src="../bower_components/jquery/dist/jquery.js"></script>
+<script src="../bower_components/moment/moment.js"></script>
+<script src="../bower_components/hammerjs/hammer.js"></script>
+<script src="../bower_components/jquery-knob/js/jquery.knob.js"></script>
+<script src="../js/datetime-picker.js"></script>
+</body>
+</html>

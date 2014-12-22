@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <title>Datetime example - Sonatra Jquery Datetime Picker</title>
+    <link href="../css/datetime-picker.css" rel="stylesheet">
+</head>
+
+<body>
+<form name="form" method="post" action="">
+    <div id="form">
+        <div>
+            <label for="form_time" class="required">Time field</label>
+            <input type="text" id="form_time"
+                   name="form[time]"
+                   required="required" data-locale="en"
+                   data-date-picker="false"
+                   data-time-picker="true"
+                   data-time-picker-first="false"
+                   data-open-focus="true"
+                   data-format="h:mm A"
+                   data-with-minutes="true"
+                   data-with-seconds="false"
+                   data-datetime-picker="true"
+                   data-button-id="form_time_datetime_btn">
+        </div>
+        <div>
+            <button type="submit" id="form_send" name="form[send]">Send</button>
+        </div>
+    </div>
+</form>
+<script src="../bower_components/jquery/dist/jquery.js"></script>
+<script src="../bower_components/moment/moment.js"></script>
+<script src="../bower_components/hammerjs/hammer.js"></script>
+<script src="../bower_components/jquery-knob/js/jquery.knob.js"></script>
+<script src="../js/datetime-picker.js"></script>
+</body>
+</html>
