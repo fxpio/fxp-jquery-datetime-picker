@@ -21,7 +21,7 @@ Add library in your `bower.json`:
 ```json
 {
     "dependencies": {
-        "sonatra-jquery-datetime-picker: "latest"
+        "sonatra-jquery-datetime-picker": "latest"
     }
 }
 ```
