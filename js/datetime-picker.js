@@ -1251,7 +1251,7 @@
             $window = $(window).eq(0),
             wTop = $window.scrollTop();
 
-        this.$picker.css('width', this.$element.width());
+        this.$picker.css('width', this.$element.outerWidth());
         this.$picker.css('left', this.$element.offset().left);
 
         if ((this.$picker.outerHeight() + top - wTop) > $window.height()) {
