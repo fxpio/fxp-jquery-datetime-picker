@@ -532,7 +532,7 @@
         }
 
         return config;
-    };
+    }
 
     /**
      * Generate the week days.
@@ -1497,7 +1497,7 @@
         }
 
         // time and meridiem display position
-        if (force || parseInt($display.css('top'), 10) === 0 && $wrapper.outerWidth() > 0) {
+        if (force || (parseInt($display.css('top'), 10) === 0 && $wrapper.outerWidth() > 0)) {
             $pickerHeader = $('.datetime-picker-header', this.$picker);
             centerPositionTop = Math.round($pickerHeader.outerHeight() + $wrapper.outerHeight() / 2);
             centerPositionLeft = Math.round($wrapper.outerWidth() / 2);
@@ -2125,7 +2125,8 @@
             }
 
             if (!data) {
-                $this.data('st.datetimepicker', (data = new DatetimePicker(this, options)));
+                data = new DatetimePicker(this, options);
+                $this.data('st.datetimepicker', data);
             }
 
             if (typeof option === 'string') {
