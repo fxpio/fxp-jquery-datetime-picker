@@ -1422,9 +1422,11 @@
      *
      * @typedef {boolean} DatetimePicker.onDragKnob Check if the time picker is in drag action
      *
+     * @param {Boolean} [force] Force the refresh of time
+     *
      * @this DatetimePicker
      */
-    DatetimePicker.prototype.refreshTimePicker = function () {
+    DatetimePicker.prototype.refreshTimePicker = function (force) {
         if (null === this.currentDate || null === this.$picker) {
             return;
         }
@@ -1495,7 +1497,7 @@
         }
 
         // time and meridiem display position
-        if (parseInt($display.css('top'), 10) === 0 && $wrapper.outerWidth() > 0) {
+        if (force || parseInt($display.css('top'), 10) === 0 && $wrapper.outerWidth() > 0) {
             $pickerHeader = $('.datetime-picker-header', this.$picker);
             centerPositionTop = Math.round($pickerHeader.outerHeight() + $wrapper.outerHeight() / 2);
             centerPositionLeft = Math.round($wrapper.outerWidth() / 2);
@@ -1607,7 +1609,7 @@
         }
 
         this.$picker.attr('data-tab-selected', 'time');
-        this.refreshTimePicker();
+        this.refreshTimePicker(true);
         this.position();
     };
 
