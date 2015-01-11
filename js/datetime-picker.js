@@ -515,6 +515,26 @@
     }
 
     /**
+     * Get the language configuration of moment.
+     *
+     * @param {moment} date     The moment instance
+     * @param {string} [locale] The ISO code of language
+     *
+     * @returns {object} The language configuration of moment
+     *
+     * @private
+     */
+    function momentLocaleData(date, locale) {
+        var config = date.localeData(locale);
+
+        if (null === config) {
+            config = date.localeData();
+        }
+
+        return config;
+    };
+
+    /**
      * Generate the week days.
      *
      * @param {DatetimePicker} self
@@ -522,11 +542,11 @@
      * @private
      */
     function generateWeekdays(self) {
-        var lang = moment.localeData(self.options.locale),
+        var lang = momentLocaleData(moment, self.options.locale),
             wekkdaysMin = '_weekdaysMin',
             week = '_week',
             days = lang[wekkdaysMin].slice(),
-            startDay = moment.localeData(self.options.locale)[week].dow,
+            startDay = momentLocaleData(moment, self.options.locale)[week].dow,
             endDays = days.splice(0, startDay),
             $days = $('.dtp-body-header-days', self.$picker),
             i;
