@@ -1150,8 +1150,8 @@
         generateWeekdays(this);
         generateTimer(this);
 
-        this.refreshValue();
         this.position();
+        this.refreshValue();
 
         this.$element.addClass(this.options.classOpen);
 
