@@ -2115,7 +2115,9 @@
      * @this jQuery
      */
     function Plugin(option, value) {
-        return this.each(function () {
+        var ret;
+
+        this.each(function () {
             var $this   = $(this),
                 data    = $this.data('st.datetimepicker'),
                 options = typeof option === 'object' && option;
@@ -2130,9 +2132,11 @@
             }
 
             if (typeof option === 'string') {
-                data[option](value);
+                ret = data[option](value);
             }
         });
+
+        return undefined === ret ? this : ret;
     }
 
     old = $.fn.datetimePicker;
