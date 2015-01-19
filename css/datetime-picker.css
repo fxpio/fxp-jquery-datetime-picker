@@ -3,6 +3,7 @@
   display: inline-block;
   min-width: 230px;
   max-height: 100%;
+  margin-top: 2px;
   overflow: hidden;
   overflow-y: auto;
   z-index: 1000;
@@ -17,7 +18,7 @@
   outline: none;
 }
 .datetime-picker-wrapper .datetime-picker-header-title {
-  padding: 5px 0;
+  padding: 10px 0;
   margin: 0;
   display: block;
   text-decoration: none !important;
@@ -26,7 +27,8 @@
   text-align: center;
   font-family: Verdana, Arial, sans-serif;
   font-weight: bold;
-  color: #0071ce;
+  color: #ffffff;
+  background: #0071ce;
 }
 .datetime-picker-wrapper .datetime-picker-header-tabs {
   background-color: #f7f7f7;
@@ -133,9 +135,8 @@
   padding: 0 3px 5px 3px;
   vertical-align: top;
   font-size: 0.82em;
-  color: #a7a7a7;
-  border-bottom: 1px solid #cccccc;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  color: #0071ce;
+  border-bottom: 1px solid #0071ce;
 }
 .datetime-picker-wrapper .datetime-picker-body .dtp-body-calendar-wrapper {
   display: block;
@@ -228,7 +229,7 @@
 .datetime-picker-wrapper .datetime-picker-body .dtp-body-time-wrapper .dtp-body-time-display .dtp-body-time-display-minutes-split,
 .datetime-picker-wrapper .datetime-picker-body .dtp-body-time-wrapper .dtp-body-time-display .dtp-body-time-display-seconds-split {
   display: none;
-  color: #a7a7a7;
+  color: #0071ce;
   font-size: 12px;
   margin: 0 1px;
 }
@@ -329,20 +330,20 @@
 @media (max-width: 767px) {
   .datetime-picker-wrapper {
     position: fixed;
-    left: 0 !important;
-    right: 0 !important;
-    top: auto !important;
-    bottom: 0 !important;
+    left: 10% !important;
+    right: 10% !important;
+    top: 20% !important;
+    bottom: auto !important;
     width: auto !important;
     border-left: none;
     border-right: none;
     border-bottom: none;
-    box-shadow: 1px -1px 3px rgba(0, 0, 0, 0.14);
+    box-shadow: 1px -2px 14px 3px rgba(0, 0, 0, 0.14);
   }
 }
 @media (max-width: 767px) and (orientation: portrait) {
   .datetime-picker-wrapper .datetime-picker-header-title {
-    padding: 14px 0;
+    padding: 30px 0;
   }
   .datetime-picker-wrapper .datetime-picker-header-nav-tabs .datetime-picker-header-nav-tab > .dtp-show-tab {
     padding: 14px 5px;
@@ -388,6 +389,11 @@
   }
 }
 @media (max-width: 767px) and (orientation: landscape) {
+  .datetime-picker-wrapper {
+    left: 15% !important;
+    right: 15% !important;
+    top: 10% !important;
+  }
   .datetime-picker-wrapper .dtp-body-calendar-day {
     padding: 3px !important;
   }
