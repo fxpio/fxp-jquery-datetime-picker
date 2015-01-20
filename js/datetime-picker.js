@@ -802,7 +802,7 @@
         };
 
         // hours
-        $hours.knob($.extend(knobConfig, {
+        $hours.knob($.extend(true, knobConfig, {
             'min':     self.options.hourMin,
             'max':     self.options.hourMax + 1,
             'step':    self.options.hourStep,
@@ -817,7 +817,7 @@
         }));
 
         // minutes
-        $minutes.knob($.extend(knobConfig, {
+        $minutes.knob($.extend(true, knobConfig, {
             'min':     self.options.minuteMin,
             'max':     self.options.minuteMax + 1,
             'step':    self.options.minuteStep,
@@ -832,7 +832,7 @@
         }));
 
         // seconds
-        $seconds.knob($.extend(knobConfig, {
+        $seconds.knob($.extend(true, knobConfig, {
             'min':     self.options.secondMin,
             'max':     self.options.secondMax + 1,
             'step':    self.options.secondStep,
@@ -864,7 +864,7 @@
      */
     var DatetimePicker = function (element, options) {
         this.guid        = jQuery.guid;
-        this.options     = $.extend({}, DatetimePicker.DEFAULTS, options);
+        this.options     = $.extend(true, {}, DatetimePicker.DEFAULTS, options);
         this.$element    = $(element);
         this.eventType   = 'click';
         this.focusEventType = 'click.st.datetimepicker';

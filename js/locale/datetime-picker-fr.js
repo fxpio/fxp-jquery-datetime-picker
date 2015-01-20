@@ -14,8 +14,8 @@
     // DATETIME PICKER CLASS DEFINITION
     // ================================
 
-    $.fn.datetimePicker.Constructor.LANGUAGES = $.extend({}, $.fn.datetimePicker.Constructor.LANGUAGES, {
-        fr: $.extend($.fn.datetimePicker.Constructor.LANGUAGES.en, {
+    $.fn.datetimePicker.Constructor.LANGUAGES = $.extend(true, {}, $.fn.datetimePicker.Constructor.LANGUAGES, {
+        fr: $.extend(true, $.fn.datetimePicker.Constructor.LANGUAGES.en, {
             date:    'Date',
             time:    'Heure',
             cancel:  'Annuler',
