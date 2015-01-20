@@ -20,6 +20,9 @@
     "jquery-knob": "1.2.*",
     "hammerjs": "2.0.*"
   },
+  "devDependencies": {
+    "bootstrap": "~3"
+  },
   "ignore": [
     "examples",
     "doc",
