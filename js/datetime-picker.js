@@ -870,6 +870,7 @@
         this.focusEventType = 'click.st.datetimepicker';
         this.currentDate    = null;
         this.$picker        = null;
+        this.$mask          = null;
 
         if (mobileCheck()) {
             this.eventType = 'touchstart';
@@ -1055,6 +1056,7 @@
             tabSelected = 'time';
         }
 
+        this.$mask = $('<div class="' + this.options.classWrapper + '-mask"></div>');
         this.$picker = $([
             '<div class="' + this.options.classWrapper + '" data-target="' + this.$element.attr('id') + '" data-tab-selected="' + tabSelected + '" data-date-picker="' + this.options.datePicker + '" data-time-picker="' + this.options.timePicker + '">',
             '<div class="' + this.options.classHeaderPicker + '">',
@@ -1134,7 +1136,9 @@
             '</div>'
         ].join(''));
 
-        $('body').append(this.$picker);
+        $('body')
+            .append(this.$mask)
+            .append(this.$picker);
 
         value = this.getValue();
         format = this.options.format;
@@ -1227,7 +1231,9 @@
         this.$picker.off('DOMMouseScroll mousewheel', '.dtp-body-time-display-seconds', scrollSecond);
         this.$picker.off('DOMMouseScroll mousewheel', '.dtp-body-time-display-meridiem-btn', scrollMeridiem);
         this.$picker.remove();
+        this.$mask.remove();
         this.$picker = null;
+        this.$mask = null;
         destroyCalendarSwipe(this);
         this.$element.removeClass(this.options.classOpen);
 

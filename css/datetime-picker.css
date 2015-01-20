@@ -1,3 +1,11 @@
+.datetime-picker-wrapper-mask {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
 .datetime-picker-wrapper {
   position: absolute;
   display: inline-block;
@@ -328,6 +336,9 @@
   display: none;
 }
 @media (max-width: 767px) {
+  .datetime-picker-wrapper-mask {
+    background: rgba(32, 32, 32, 0.7);
+  }
   .datetime-picker-wrapper {
     position: fixed;
     left: 10% !important;
@@ -338,7 +349,8 @@
     border-left: none;
     border-right: none;
     border-bottom: none;
-    box-shadow: 1px -2px 14px 3px rgba(0, 0, 0, 0.14);
+    -webkit-box-shadow: 0 -6px 12px rgba(0, 0, 0, 0.275) !important;
+    box-shadow: 0 -6px 12px rgba(0, 0, 0, 0.275) !important;
   }
 }
 @media (max-width: 767px) and (orientation: portrait) {
