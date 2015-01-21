@@ -1154,7 +1154,6 @@
         generateWeekdays(this);
         generateTimer(this);
 
-        this.position();
         this.refreshValue();
 
         this.$element.addClass(this.options.classOpen);
@@ -1191,6 +1190,7 @@
         $(window).on('scroll.st.datetimepicker' + this.guid, null, this, closeExternal);
 
         initCalendarSwipe(this);
+        this.position();
     };
 
     /**
