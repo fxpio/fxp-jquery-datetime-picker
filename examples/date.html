@@ -31,10 +31,22 @@
         </div>
     </div>
 </form>
-<script src="../bower_components/jquery/dist/jquery.js"></script>
-<script src="../bower_components/moment/moment.js"></script>
-<script src="../bower_components/hammerjs/hammer.js"></script>
-<script src="../bower_components/jquery-knob/js/jquery.knob.js"></script>
-<script src="../js/datetime-picker.js"></script>
+<script>
+    var require = {
+        paths: {
+            'jquery': '../bower_components/jquery/dist/jquery',
+            'moment': '../bower_components/moment/moment',
+            'hammerjs': '../bower_components/hammerjs/hammer',
+            'jquery-knob': '../bower_components/jquery-knob/js/jquery.knob',
+            'sonatra-jquery-datetime-picker': '../js/datetime-picker',
+            'sonatra-jquery-datetime-picker-locale': '../js/locale'
+        },
+        deps: ['sonatra-jquery-datetime-picker', 'sonatra-jquery-datetime-picker-locale/datetime-picker-fr'],
+        callback: function () {
+            $(window).trigger('load');
+        }
+    };
+</script>
+<script src="../bower_components/requirejs/require.js" async="async"></script>
 </body>
 </html>

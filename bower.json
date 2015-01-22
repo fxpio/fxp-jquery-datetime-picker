@@ -21,6 +21,7 @@
     "hammerjs": "2.0.*"
   },
   "devDependencies": {
+    "requirejs": "~2",
     "bootstrap": "~3"
   },
   "ignore": [
