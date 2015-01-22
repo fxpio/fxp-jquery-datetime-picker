@@ -7,6 +7,7 @@
  * file that was distributed with this source code.
  */
 
+/*global define*/
 /*global jQuery*/
 /*global window*/
 /*global navigator*/
@@ -21,12 +22,23 @@
 /**
  * @param {jQuery} $
  *
+ * @typedef {object}         define.amd
  * @typedef {DatetimePicker} DatetimePicker
  * @typedef {function} moment.clone
  * @typedef {function} moment.localeData
  * @typedef {function} moment.format
  */
-(function ($) {
+(function (factory) {
+    'use strict';
+
+    if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define(['jquery', 'hammerjs', 'moment', 'jquery-knob'], factory);
+    } else {
+        // Browser globals
+        factory(jQuery, window.Hammer);
+    }
+}(function ($, Hammer) {
     'use strict';
 
     /**
@@ -2171,4 +2183,4 @@
         });
     });
 
-}(jQuery));
+}));

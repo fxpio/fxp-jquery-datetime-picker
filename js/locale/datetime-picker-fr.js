@@ -7,8 +7,23 @@
  * file that was distributed with this source code.
  */
 
+/*global define*/
 /*global jQuery*/
-(function ($) {
+
+/**
+ * @typedef {object} define.amd
+ */
+(function (factory) {
+    'use strict';
+
+    if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define(['jquery', 'sonatra-jquery-datetime-picker'], factory);
+    } else {
+        // Browser globals
+        factory(jQuery);
+    }
+}(function ($) {
     'use strict';
 
     // DATETIME PICKER CLASS DEFINITION
@@ -24,4 +39,4 @@
         })
     });
 
-}(jQuery));
+}));
