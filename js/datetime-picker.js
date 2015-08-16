@@ -36,9 +36,9 @@
         define(['jquery', 'hammerjs', 'moment', 'jquery-knob'], factory);
     } else {
         // Browser globals
-        factory(jQuery, window.Hammer);
+        factory(jQuery, window.Hammer, moment);
     }
-}(function ($, Hammer) {
+}(function ($, Hammer, moment) {
     'use strict';
 
     /**
