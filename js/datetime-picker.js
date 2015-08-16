@@ -617,12 +617,12 @@
                 number = currentDay.date();
                 dayClass = 'dtp-body-calendar-day';
 
-                if (currentDay.year() === date.year() && currentDay.months() === date.months()) {
+                if (currentDay.year() === date.year() && currentDay.month() === date.month()) {
                     if (number === date.date()) {
                         dayClass += ' dtp-day-selected';
                     }
 
-                    if (number === today.date() && date.months() === today.months() && date.year() === today.year()) {
+                    if (number === today.date() && date.month() === today.month() && date.year() === today.year()) {
                         dayClass += ' dtp-day-today';
                     }
 
