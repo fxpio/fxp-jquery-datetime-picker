@@ -151,7 +151,7 @@
                 var value = $(event.target).attr('data-date-value');
 
                 if (value) {
-                    this.setDatetime(value);
+                    this.setDatetime(value.valueOf());
                 }
             }, self))
 
@@ -273,7 +273,7 @@
      * @private
      */
     function keyboardAction(event) {
-        if (!event instanceof jQuery.Event) {
+        if (!(event instanceof jQuery.Event)) {
             return;
         }
 
@@ -771,9 +771,9 @@
 
         $wrapper.addClass('time-has-meridiem');
 
-        if (!$wrapper.hasClass('time-hours-selected')
-                && !$wrapper.hasClass('time-minutes-selected')
-                && !$wrapper.hasClass('time-seconds-selected')) {
+        if (!$wrapper.hasClass('time-hours-selected') &&
+                !$wrapper.hasClass('time-minutes-selected') &&
+                !$wrapper.hasClass('time-seconds-selected')) {
             $wrapper.addClass('time-hours-selected');
         }
 
@@ -1037,7 +1037,7 @@
             event.stopPropagation();
         }
 
-        if (this.isOpen() && (!event || !(this.$element.get(0) === event.target))) {
+        if (this.isOpen() && (!event || this.$element.get(0) !== event.target)) {
             this.close();
 
         } else {
