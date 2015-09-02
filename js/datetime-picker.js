@@ -1203,6 +1203,10 @@
 
         initCalendarSwipe(this);
         this.position();
+
+        if (tabSelected === 'time') {
+            this.refreshTimePicker(true);
+        }
     };
 
     /**
