@@ -1260,6 +1260,8 @@
         if (tabSelected === 'time') {
             this.refreshTimePicker(true);
         }
+
+        this.position();
     };
 
     /**
