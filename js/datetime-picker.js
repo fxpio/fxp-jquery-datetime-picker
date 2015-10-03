@@ -42,6 +42,26 @@
     'use strict';
 
     /**
+     * Get the width of native scrollbar.
+     *
+     * @returns {Number}
+     */
+    function getNativeScrollWidth() {
+        var sbDiv = document.createElement("div"),
+            size;
+        sbDiv.style.width = '100px';
+        sbDiv.style.height = '100px';
+        sbDiv.style.overflow = 'scroll';
+        sbDiv.style.position = 'absolute';
+        sbDiv.style.top = '-9999px';
+        document.body.appendChild(sbDiv);
+        size = sbDiv.offsetWidth - sbDiv.clientWidth;
+        document.body.removeChild(sbDiv);
+
+        return size;
+    }
+
+    /**
      * Check if is a mobile device.
      *
      * @returns {boolean}
@@ -49,7 +69,7 @@
      * @private
      */
     function mobileCheck() {
-        return Boolean(navigator.userAgent.match(/Android|iPhone|iPad|iPod|IEMobile|BlackBerry|Opera Mini/i));
+        return 0 === getNativeScrollWidth();
     }
 
     /**
@@ -323,6 +343,35 @@
         event.stopPropagation();
 
         self.close();
+    }
+
+    /**
+     * Action on input focus move.
+     *
+     * @param {jQuery.Event|Event} event
+     *
+     * @private
+     */
+    function onInputFocusMove(event) {
+        event.data.$element.data('st-inputFocusDragged', true);
+    }
+
+    /**
+     * Action on input focus event.
+     *
+     * @param {jQuery.Event|Event} event
+     *
+     * @private
+     */
+    function onInputFocusAction(event) {
+        var self = event.data;
+
+        if (undefined === self.$element.data('st-inputFocusDragged')) {
+            console.log('FOCUS');
+            self.toggle();
+        }
+
+        self.$element.removeData('st-inputFocusDragged');
     }
 
     /**
@@ -894,7 +943,11 @@
         }
 
         if (this.options.openFocus) {
-            this.$element.on(this.focusEventType, $.proxy(DatetimePicker.prototype.toggle, this));
+            if (mobileCheck()) {
+                this.$element.on('touchmove', null, this, onInputFocusMove);
+            }
+
+            this.$element.on(this.focusEventType, null, this, onInputFocusAction);
         }
 
         this.$element.on('keyup.st.datetimepicker', null, this, keyboardAction);
@@ -2118,7 +2171,11 @@
         }
 
         if (this.options.openFocus) {
-            this.$element.on(this.focusEventType, $.proxy(DatetimePicker.prototype.toggle, this));
+            if (mobileCheck()) {
+                this.$element.off('touchmove', onInputFocusMove);
+            }
+
+            this.$element.off(this.focusEventType, onInputFocusAction);
         }
 
         this.$element.removeData('st.datetimepicker');
