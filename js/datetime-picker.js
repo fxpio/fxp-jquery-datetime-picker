@@ -1250,7 +1250,7 @@
         this.$picker.on('DOMMouseScroll mousewheel', '.dtp-body-time-display-seconds', this, scrollSecond);
         this.$picker.on('DOMMouseScroll mousewheel', '.dtp-body-time-display-meridiem-btn', this, scrollMeridiem);
         $(document).on(this.eventType + '.st.datetimepicker' + this.guid, null, this, closeExternal);
-        $(window).on('resize.st.datetimepicker' + this.guid, null, this, closeExternal);
+        $(window).on('resize.st.datetimepicker' + this.guid, null, this, $.proxy(DatetimePicker.prototype.position, this));
         $(window).on('keyup.st.datetimepicker' + this.guid, null, this, keyboardAction);
         $(window).on('scroll.st.datetimepicker' + this.guid, null, this, closeExternal);
 
@@ -1307,7 +1307,7 @@
         this.$element.removeClass(this.options.classOpen);
 
         $(document).off(this.eventType + '.st.datetimepicker' + this.guid, closeExternal);
-        $(window).off('resize.st.datetimepicker' + this.guid, closeExternal);
+        $(window).off('resize.st.datetimepicker' + this.guid, $.proxy(DatetimePicker.prototype.position, this));
         $(window).off('keyup.st.datetimepicker' + this.guid, keyboardAction);
         $(window).off('scroll.st.datetimepicker' + this.guid, closeExternal);
     };
