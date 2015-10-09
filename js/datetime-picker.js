@@ -367,7 +367,6 @@
         var self = event.data;
 
         if (undefined === self.$element.data('st-inputFocusDragged')) {
-            console.log('FOCUS');
             self.toggle();
         }
 
