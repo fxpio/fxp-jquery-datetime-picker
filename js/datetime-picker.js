@@ -1385,6 +1385,7 @@
         }
 
         this.$element.val(date);
+        this.$element.trigger('change');
     };
 
     /**
