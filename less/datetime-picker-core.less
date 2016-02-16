@@ -20,10 +20,6 @@
     overflow: hidden;
     overflow-y: auto;
     z-index: @zindex-datetime-picker;
-    color: @datetime-picker-color;
-    background-color: @datetime-picker-bg;
-    border: 1px solid @datetime-picker-fallback-border; // IE8 fallback
-    border: 1px solid @datetime-picker-border;
     background-clip: padding-box;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.14);
 
@@ -37,16 +33,10 @@
         display: block;
         text-decoration: none !important;
         cursor: pointer;
-        border-bottom: 2px solid @datetime-picker-title-border-color;
+        border-bottom: 2px solid transparent;
         text-align: center;
         font-family: @datetime-picker-title-font-familly;
         font-weight: @datetime-picker-title-font-weight;
-        color: @datetime-picker-title-color;
-        background: @datetime-picker-title-background-color;
-    }
-
-    .datetime-picker-header-tabs {
-        background-color: @datetime-picker-tab-bg;
     }
 
     .datetime-picker-header-nav-tabs {
@@ -64,7 +54,6 @@
             > .dtp-show-tab {
                 text-decoration: none;
                 cursor: pointer;
-                color: @datetime-picker-tab-color;
                 padding: 10px;
                 display: block;
                 text-transform: uppercase;
@@ -76,24 +65,6 @@
                 > .dtp-show-tab {
                     border-left: none;
                 }
-            }
-        }
-    }
-
-    &[data-tab-selected=date] {
-        .datetime-picker-header-nav-tab {
-            &.dtp-tab-date > .dtp-show-tab {
-                color: @datetime-picker-tab-selected-color;
-                background-color: @datetime-picker-bg;
-            }
-        }
-    }
-
-    &[data-tab-selected=time] {
-        .datetime-picker-header-nav-tab {
-            &.dtp-tab-time > .dtp-show-tab {
-                color: @datetime-picker-tab-selected-color;
-                background-color: @datetime-picker-bg;
             }
         }
     }
@@ -130,7 +101,6 @@
                         text-decoration: none;
                         cursor: pointer;
                         font-weight: @datetime-picker-title-font-weight;
-                        color: @datetime-picker-choice-btn-color;
 
                         &:first-child:after {
                             content: "<";
@@ -143,10 +113,6 @@
                         &:hover,
                         &:focus {
                             text-decoration: none;
-                        }
-
-                        &:hover {
-                            background-color: @datetime-picker-btn-hover-bg;
                         }
                     }
 
@@ -180,8 +146,8 @@
                 padding: 0 3px 5px 3px;
                 vertical-align: top;
                 font-size: 0.82em;
-                color: @datetime-picker-header-days-color;
-                border-bottom: 1px solid @datetime-picker-header-day-border-color;
+
+                border-bottom: 1px solid transparent;
             }
         }
 
@@ -238,26 +204,6 @@
                 border-radius: 11px;
                 text-decoration: none;
                 cursor: pointer;
-                color: @datetime-picker-color;
-            }
-
-            &.dtp-day-out {
-                > .dtp-body-calendar-day-value {
-                    color: @datetime-picker-day-out-color;
-                }
-            }
-
-            &.dtp-day-today {
-                > .dtp-body-calendar-day-value {
-                    background-color: @datetime-picker-day-today-bg;
-                }
-            }
-
-            &.dtp-day-selected {
-                > .dtp-body-calendar-day-value {
-                    color: @datetime-picker-day-selected-color;
-                    background-color: @datetime-picker-day-selected-bg;
-                }
             }
         }
 
@@ -294,7 +240,6 @@
                 .dtp-body-time-display-minutes-split,
                 .dtp-body-time-display-seconds-split {
                     display: none;
-                    color: @datetime-picker-time-btn-split-color;
                     font-size: 12px;
                     margin: 0 1px;
                 }
@@ -309,8 +254,6 @@
                     padding: 4px;
                     min-width: 24px;
                     cursor: pointer;
-                    color: @datetime-picker-time-btn-meridiem-color;
-                    background-color: @datetime-picker-time-btn-meridiem-bg;
                     .border-top-radius(4px);
                     .border-bottom-radius(4px);
                 }
@@ -352,33 +295,18 @@
             }
 
             &.time-hours-selected {
-                .dtp-body-time-display-hours {
-                    color: @datetime-picker-time-btn-hours-color;
-                    background-color: @datetime-picker-time-btn-hours-bg;
-                }
-
                 .dtp-body-time-content-hours {
                     display: block;
                 }
             }
 
             &.time-minutes-selected {
-                .dtp-body-time-display-minutes {
-                    color: @datetime-picker-time-btn-minutes-color;
-                    background-color: @datetime-picker-time-btn-minutes-bg;
-                }
-
                 .dtp-body-time-content-minutes {
                     display: block;
                 }
             }
 
             &.time-seconds-selected {
-                .dtp-body-time-display-seconds {
-                    color: @datetime-picker-time-btn-seconds-color;
-                    background-color: @datetime-picker-time-btn-seconds-bg;
-                }
-
                 .dtp-body-time-content-seconds {
                     display: block;
                 }
@@ -405,8 +333,6 @@
     .datetime-picker-footer {
         display: table;
         width: 100%;
-        border-top: 1px solid @datetime-picker-fallback-border; // IE8 fallback
-        border-top: 1px solid @datetime-picker-border;
         bottom: 0;
     }
 
@@ -417,23 +343,8 @@
         > span {
             text-decoration: none;
             cursor: pointer;
-            color: @datetime-picker-color;
             padding: 8px;
             display: block;
-
-            border-left: 1px solid @datetime-picker-fallback-border; // IE8 fallback
-            border-left: 1px solid @datetime-picker-border;
-
-            &:hover,
-            &focus {
-                background-color: @datetime-picker-btn-hover-bg;
-            }
-        }
-
-        &:first-child {
-            > span {
-                border-left: none;
-            }
         }
     }
 

@@ -1,0 +1,154 @@
+//
+// Datetime picker Theme
+// --------------------------------------------------
+
+.datetime-picker-wrapper {
+    color: @datetime-picker-color;
+    background-color: @datetime-picker-bg;
+    border: 1px solid @datetime-picker-fallback-border; // IE8 fallback
+    border: 1px solid @datetime-picker-border;
+
+    .datetime-picker-header-title {
+        border-bottom-color: @datetime-picker-title-border-color;
+        color: @datetime-picker-title-color;
+        background: @datetime-picker-title-background-color;
+    }
+
+    .datetime-picker-header-tabs {
+        background-color: @datetime-picker-tab-bg;
+    }
+
+    .datetime-picker-header-nav-tabs {
+        .datetime-picker-header-nav-tab {
+            > .dtp-show-tab {
+                color: @datetime-picker-tab-color;
+            }
+        }
+    }
+
+    &[data-tab-selected=date] {
+        .datetime-picker-header-nav-tab {
+            &.dtp-tab-date > .dtp-show-tab {
+                color: @datetime-picker-tab-selected-color;
+                background-color: @datetime-picker-bg;
+            }
+        }
+    }
+
+    &[data-tab-selected=time] {
+        .datetime-picker-header-nav-tab {
+            &.dtp-tab-time > .dtp-show-tab {
+                color: @datetime-picker-tab-selected-color;
+                background-color: @datetime-picker-bg;
+            }
+        }
+    }
+
+    .datetime-picker-body {
+        .dtp-body-header {
+            .dtp-body-header-choice {
+                .dtp-body-header-choice-content {
+                    .dtp-choice-btn {
+                        color: @datetime-picker-choice-btn-color;
+
+                        &:hover {
+                            background-color: @datetime-picker-btn-hover-bg;
+                        }
+                    }
+                }
+            }
+
+            .dtp-body-header-day {
+                color: @datetime-picker-header-days-color;
+                border-bottom-color: @datetime-picker-header-day-border-color;
+            }
+        }
+
+        .dtp-body-calendar-day {
+            > .dtp-body-calendar-day-value {
+                color: @datetime-picker-color;
+            }
+
+            &.dtp-day-out {
+                > .dtp-body-calendar-day-value {
+                    color: @datetime-picker-day-out-color;
+                }
+            }
+
+            &.dtp-day-today {
+                > .dtp-body-calendar-day-value {
+                    background-color: @datetime-picker-day-today-bg;
+                }
+            }
+
+            &.dtp-day-selected {
+                > .dtp-body-calendar-day-value {
+                    color: @datetime-picker-day-selected-color;
+                    background-color: @datetime-picker-day-selected-bg;
+                }
+            }
+        }
+
+        .dtp-body-time-wrapper {
+            .dtp-body-time-display {
+                .dtp-body-time-display-hours-split,
+                .dtp-body-time-display-minutes-split,
+                .dtp-body-time-display-seconds-split {
+                    color: @datetime-picker-time-btn-split-color;
+                }
+            }
+
+            .dtp-body-time-display-meridiem {
+                .dtp-body-time-display-meridiem-btn {
+                    color: @datetime-picker-time-btn-meridiem-color;
+                    background-color: @datetime-picker-time-btn-meridiem-bg;
+                }
+            }
+
+            &.time-hours-selected {
+                .dtp-body-time-display-hours {
+                    color: @datetime-picker-time-btn-hours-color;
+                    background-color: @datetime-picker-time-btn-hours-bg;
+                }
+            }
+
+            &.time-minutes-selected {
+                .dtp-body-time-display-minutes {
+                    color: @datetime-picker-time-btn-minutes-color;
+                    background-color: @datetime-picker-time-btn-minutes-bg;
+                }
+            }
+
+            &.time-seconds-selected {
+                .dtp-body-time-display-seconds {
+                    color: @datetime-picker-time-btn-seconds-color;
+                    background-color: @datetime-picker-time-btn-seconds-bg;
+                }
+            }
+        }
+    }
+
+    .datetime-picker-footer {
+        border-top: 1px solid @datetime-picker-fallback-border; // IE8 fallback
+        border-top: 1px solid @datetime-picker-border;
+    }
+
+    .datetime-picker-footer-btn {
+        > span {
+            color: @datetime-picker-color;
+            border-left: 1px solid @datetime-picker-fallback-border; // IE8 fallback
+            border-left: 1px solid @datetime-picker-border;
+
+            &:hover,
+            &focus {
+                background-color: @datetime-picker-btn-hover-bg;
+            }
+
+            &:first-child {
+                > span {
+                    border-left: none;
+                }
+            }
+        }
+    }
+}
