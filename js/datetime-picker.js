@@ -999,7 +999,7 @@
         classDatePicker:   'datetime-picker-date',
         classTimePicker:   'datetime-picker-time',
         locale:            'en',
-        format:            null,
+        format:            '',
         datePicker:        true,
         timePicker:        true,
         timePickerFirst:   false,
