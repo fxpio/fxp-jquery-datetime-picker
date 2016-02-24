@@ -111,6 +111,49 @@
     }
 
     /**
+     * Get the zindex of element.
+     *
+     * @param {jQuery} $element The jquery element
+     *
+     * @return {Number}
+     */
+    function getZindex($element) {
+        var zindex = parseInt($element.css('z-index'), 0);
+
+        if (isNaN(zindex)) {
+            zindex = 0;
+        }
+
+        return zindex;
+    }
+
+    /**
+     * Find the parent zindex.
+     *
+     * @param {jQuery} $element The jquery element
+     *
+     * @return {Number}
+     *
+     * @private
+     */
+    function findParentZindex($element) {
+        var zindex = getZindex($element),
+            $parents = $element.parents(),
+            value,
+            i;
+
+        for (i = 0; i < $parents.length; i += 1) {
+            value = parseInt($parents.eq(i).css('z-index'), 0);
+
+            if (!isNaN(value)) {
+                zindex = Math.max(zindex, value);
+            }
+        }
+
+        return zindex;
+    }
+
+    /**
      * Action on drag end transition of calendar picker.
      *
      * @param {Event} event The hammer event
@@ -1109,7 +1152,8 @@
 
         var value,
             tabSelected,
-            format;
+            format,
+            zindex;
 
         // closes all other pickers
         $('[data-datetime-picker=true]').datetimePicker('close');
@@ -1206,6 +1250,9 @@
 
         value = this.getValue();
         format = this.options.format;
+        zindex = Math.max(findParentZindex(this.$element), 0);
+        this.$picker.css('z-index', getZindex(this.$picker) + zindex);
+        this.$mask.css('z-index', getZindex(this.$mask) + zindex);
 
         if ('' === value) {
             this.currentDate = moment();
