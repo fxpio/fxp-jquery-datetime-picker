@@ -1,7 +1,32 @@
 {
-  "name": "sonatra-jquery-datetime-picker",
-  "description": " ",
-  "repository": {},
+  "name": "@sonatra/jquery-datetime-picker",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "François Pluchino <francois.pluchino@sonatra.com>",
+  "contributors": [],
+  "description": "A Jquery date time picker",
+  "keywords": [
+    "datetime",
+    "date",
+    "time",
+    "jquery"
+  ],
+  "homepage": "https://github.com/sonatra/sonatra-jquery-datetime-picker",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sonatra/sonatra-jquery-datetime-picker.git"
+  },
+  "bugs": {
+    "url" : "https://github.com/sonatra/sonatra-jquery-datetime-picker/issues"
+  },
+  "engines": {},
+  "main": "js/datetime-picker.js",
+  "dependencies": {
+    "jquery": "^2.1.0",
+    "moment": "^2.10.0",
+    "jquery-knob": "^1.2.0",
+    "hammerjs": "^2.0.0"
+  },
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-cli": "^0.1.13",
@@ -9,9 +34,8 @@
     "time-grunt": "^1.2.1",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-contrib-less": "^1.0.1",
-    "grunt-browser-sync": "^2.1.3"
-  },
-  "engines": {
-    "node": ">=0.10.0"
+    "grunt-browser-sync": "^2.1.3",
+    "requirejs": "^2.0.0",
+    "bootstrap": "^3.3.0"
   }
 }
