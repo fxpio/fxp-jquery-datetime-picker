@@ -17,7 +17,7 @@
     "url": "https://github.com/sonatra/sonatra-jquery-datetime-picker.git"
   },
   "bugs": {
-    "url" : "https://github.com/sonatra/sonatra-jquery-datetime-picker/issues"
+    "url": "https://github.com/sonatra/sonatra-jquery-datetime-picker/issues"
   },
   "engines": {},
   "main": "js/datetime-picker.js",
