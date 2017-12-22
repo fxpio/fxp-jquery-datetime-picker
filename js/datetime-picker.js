@@ -378,7 +378,7 @@
         var self = event.data,
             $target = $(event.currentTarget.activeElement);
 
-        if ($target.hasClass(self.options.classOpen) || $(event.target).hasClass(self.options.classWrapper) || $(event.target).parents('.' + self.options.classWrapper).size() > 0) {
+        if ($target.hasClass(self.options.classOpen) || $(event.target).hasClass(self.options.classWrapper) || $(event.target).parents('.' + self.options.classWrapper).length > 0) {
             return;
         }
 
