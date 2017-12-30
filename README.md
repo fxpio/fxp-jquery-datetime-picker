@@ -1,5 +1,5 @@
-Sonatra Jquery Datetime Picker
-==============================
+Fxp Jquery Datetime Picker
+==========================
 
 This jquery plugin is a responsive datetime picker. It's completely configurable,
 and it can display only date, time or both in only one text field.
@@ -27,10 +27,10 @@ This javascript component is under the MIT license. See the complete license:
 About
 -----
 
-Sonatra Jquery Datetime Picker is a [sonatra](https://github.com/sonatra) initiative.
-See also the list of [contributors](https://github.com/sonatra/sonatra-jquery-datetime-picker/graphs/contributors).
+Fxp Jquery Datetime Picker is a [François Pluchino](https://github.com/francoispluchino) initiative.
+See also the list of [contributors](https://github.com/fxpio/fxp-jquery-datetime-picker/graphs/contributors).
 
 Reporting an issue or a feature request
 ---------------------------------------
 
-Issues and feature requests are tracked in the [Github issue tracker](https://github.com/sonatra/sonatra-jquery-datetime-picker/issues).
+Issues and feature requests are tracked in the [Github issue tracker](https://github.com/fxpio/fxp-jquery-datetime-picker/issues).

@@ -1,8 +1,8 @@
 {
-  "name": "@sonatra/jquery-datetime-picker",
+  "name": "@fxp/jquery-datetime-picker",
   "version": "1.0.0",
   "license": "MIT",
-  "author": "François Pluchino <francois.pluchino@sonatra.com>",
+  "author": "François Pluchino <francois.pluchino@gmail.com>",
   "contributors": [],
   "description": "A Jquery date time picker",
   "keywords": [
@@ -11,13 +11,13 @@
     "time",
     "jquery"
   ],
-  "homepage": "https://github.com/sonatra/sonatra-jquery-datetime-picker",
+  "homepage": "https://github.com/fxpio/fxp-jquery-datetime-picker",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sonatra/sonatra-jquery-datetime-picker.git"
+    "url": "https://github.com/fxpio/fxp-jquery-datetime-picker.git"
   },
   "bugs": {
-    "url": "https://github.com/sonatra/sonatra-jquery-datetime-picker/issues"
+    "url": "https://github.com/fxpio/fxp-jquery-datetime-picker/issues"
   },
   "engines": {},
   "main": "js/datetime-picker.js",

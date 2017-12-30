@@ -15,7 +15,7 @@ Installation
 ------------
 
 ```
-npm install @sonatra/jquery-datetime-picker --save
+npm install @fxp/jquery-datetime-picker --save
 ```
 
 Dev installation

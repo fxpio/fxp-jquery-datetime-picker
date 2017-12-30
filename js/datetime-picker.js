@@ -1,7 +1,7 @@
 /*
- * This file is part of the Sonatra package.
+ * This file is part of the Fxp package.
  *
- * (c) François Pluchino <francois.pluchino@sonatra.com>
+ * (c) François Pluchino <francois.pluchino@gmail.com>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -970,18 +970,18 @@
         this.options     = $.extend(true, {}, DatetimePicker.DEFAULTS, options);
         this.$element    = $(element);
         this.eventType   = 'click';
-        this.focusEventType = 'click.st.datetimepicker';
+        this.focusEventType = 'click.fxp.datetimepicker';
         this.currentDate    = null;
         this.$picker        = null;
         this.$mask          = null;
 
         if (mobileCheck()) {
             this.eventType = 'touchstart';
-            this.focusEventType = 'touchend.st.datetimepicker';
+            this.focusEventType = 'touchend.fxp.datetimepicker';
         }
 
         if (null !== this.options.buttonId) {
-            $('#' + this.options.buttonId).on('click' + '.st.datetimepicker', $.proxy(DatetimePicker.prototype.toggle, this));
+            $('#' + this.options.buttonId).on('click' + '.fxp.datetimepicker', $.proxy(DatetimePicker.prototype.toggle, this));
         }
 
         if (this.options.openFocus) {
@@ -992,7 +992,7 @@
             this.$element.on(this.focusEventType, null, this, onInputFocusAction);
         }
 
-        this.$element.on('keyup.st.datetimepicker', null, this, keyboardAction);
+        this.$element.on('keyup.fxp.datetimepicker', null, this, keyboardAction);
         this.$element.attr('data-datetime-picker', 'true');
         this.$element.attr('autocomplete', 'off');
     },
@@ -1295,10 +1295,10 @@
         this.$picker.on('DOMMouseScroll mousewheel', '.dtp-body-time-display-minutes', this, scrollMinute);
         this.$picker.on('DOMMouseScroll mousewheel', '.dtp-body-time-display-seconds', this, scrollSecond);
         this.$picker.on('DOMMouseScroll mousewheel', '.dtp-body-time-display-meridiem-btn', this, scrollMeridiem);
-        $(document).on(this.eventType + '.st.datetimepicker' + this.guid, null, this, closeExternal);
-        $(window).on('resize.st.datetimepicker' + this.guid, null, this, $.proxy(DatetimePicker.prototype.position, this));
-        $(window).on('keyup.st.datetimepicker' + this.guid, null, this, keyboardAction);
-        $(window).on('scroll.st.datetimepicker' + this.guid, null, this, closeExternal);
+        $(document).on(this.eventType + '.fxp.datetimepicker' + this.guid, null, this, closeExternal);
+        $(window).on('resize.fxp.datetimepicker' + this.guid, null, this, $.proxy(DatetimePicker.prototype.position, this));
+        $(window).on('keyup.fxp.datetimepicker' + this.guid, null, this, keyboardAction);
+        $(window).on('scroll.fxp.datetimepicker' + this.guid, null, this, closeExternal);
 
         initCalendarSwipe(this);
         this.position();
@@ -1354,10 +1354,10 @@
         destroyCalendarSwipe(this);
         this.$element.removeClass(this.options.classOpen);
 
-        $(document).off(this.eventType + '.st.datetimepicker' + this.guid, closeExternal);
-        $(window).off('resize.st.datetimepicker' + this.guid, $.proxy(DatetimePicker.prototype.position, this));
-        $(window).off('keyup.st.datetimepicker' + this.guid, keyboardAction);
-        $(window).off('scroll.st.datetimepicker' + this.guid, closeExternal);
+        $(document).off(this.eventType + '.fxp.datetimepicker' + this.guid, closeExternal);
+        $(window).off('resize.fxp.datetimepicker' + this.guid, $.proxy(DatetimePicker.prototype.position, this));
+        $(window).off('keyup.fxp.datetimepicker' + this.guid, keyboardAction);
+        $(window).off('scroll.fxp.datetimepicker' + this.guid, closeExternal);
     };
 
     /**
@@ -2216,7 +2216,7 @@
         this.close();
 
         if (null !== this.options.buttonId) {
-            $('#' + this.options.buttonId).off('click' + '.st.datetimepicker', $.proxy(DatetimePicker.prototype.toggle, this));
+            $('#' + this.options.buttonId).off('click' + '.fxp.datetimepicker', $.proxy(DatetimePicker.prototype.toggle, this));
         }
 
         if (this.options.openFocus) {
