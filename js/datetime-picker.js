@@ -37,7 +37,7 @@ export default class DatetimePicker extends BaseI18nPlugin
      * @param {object}      options The options
      */
     constructor(element, options = {}) {
-        super(element, $.extend(true, {}, DatetimePicker.defaultOptions, options));
+        super(element, options);
 
         this.eventType      = 'click';
         this.focusEventType = 'click.fxp.datetimepicker';
