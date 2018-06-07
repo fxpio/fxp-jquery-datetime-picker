@@ -4,8 +4,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <title>Datetime example - Fxp Jquery Datetime Picker</title>
-    <link href="../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
-    <link href="../css/datetime-picker.css" rel="stylesheet">
+    <link href="main.css" rel="stylesheet">
 </head>
 
 <body>
@@ -31,22 +30,6 @@
         </div>
     </div>
 </form>
-<script>
-    var require = {
-        paths: {
-            'jquery': '../node_modules/jquery/dist/jquery',
-            'moment': '../node_modules/moment/moment',
-            'hammerjs': '../node_modules/hammerjs/hammer',
-            'jquery-knob': '../node_modules/jquery-knob/js/jquery.knob',
-            'fxp-jquery-datetime-picker': '../js/datetime-picker',
-            'fxp-jquery-datetime-picker-locale': '../js/locale'
-        },
-        deps: ['fxp-jquery-datetime-picker', 'fxp-jquery-datetime-picker-locale/datetime-picker-fr'],
-        callback: function () {
-            $(window).trigger('load');
-        }
-    };
-</script>
-<script src="../node_modules/requirejs/require.js" async="async"></script>
+<script src="main.js" async="async"></script>
 </body>
 </html>

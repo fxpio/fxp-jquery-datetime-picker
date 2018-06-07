@@ -1,16 +1,6 @@
 Getting Started
 ===============
 
-Prerequisites
--------------
-
-This library require:
-
-- jquery
-- momentjs
-- hammerjs
-- jquery-knob
-
 Installation
 ------------
 
@@ -27,8 +17,10 @@ Dev installation
 npm install
 ```
 
-### Use grunt
+### Use Webpack Encore
 
 ```
-grunt serve
+$ encore dev-server --port 9000
 ```
+
+Open the URL `http://localhost:9000/build` in your browser.
