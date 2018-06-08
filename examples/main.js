@@ -10,4 +10,4 @@
 import 'bootstrap/less/bootstrap.less';
 import '../less/datetime-picker.less';
 import '../js/datetime-picker';
-import '../js/locale/datetime-picker-fr';
+import '../js/locale/fr';
