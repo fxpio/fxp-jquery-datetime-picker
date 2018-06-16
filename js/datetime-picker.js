@@ -1122,7 +1122,6 @@ DatetimePicker.defaultOptions = {
     classFooterPicker: 'datetime-picker-footer',
     classDatePicker:   'datetime-picker-date',
     classTimePicker:   'datetime-picker-time',
-    locale:            'en',
     format:            '',
     datePicker:        true,
     timePicker:        true,
@@ -1143,6 +1142,7 @@ DatetimePicker.defaultOptions = {
     secondMax:         59,
     secondStep:        1
 };
+
 /**
  * Default locale.
  */
