@@ -235,7 +235,7 @@ export default class DatetimePicker extends BaseI18nPlugin
             this.currentDate = moment(value, format);
         }
 
-        this.currentDate.localeData(this.options.locale);
+        this.currentDate.localeData(this.getLocale());
 
         generateWeekdays(this);
         generateTimer(this);
@@ -372,7 +372,7 @@ export default class DatetimePicker extends BaseI18nPlugin
         if (typeof date === 'string') {
             /* @type {moment} */
             date = moment(date, this.options.format);
-            date.localeData(this.options.locale);
+            date.localeData(this.getLocale());
         }
 
         if (null !== date) {
@@ -410,7 +410,7 @@ export default class DatetimePicker extends BaseI18nPlugin
             this.currentDate = moment(value, format);
         }
 
-        this.currentDate.localeData(this.options.locale);
+        this.currentDate.localeData(this.getLocale());
 
         this.refreshPicker();
     }
@@ -762,7 +762,7 @@ export default class DatetimePicker extends BaseI18nPlugin
         }
 
         this.currentDate = datetime;
-        this.currentDate.localeData(this.options.locale);
+        this.currentDate.localeData(this.getLocale());
         this.refreshPicker();
     }
 

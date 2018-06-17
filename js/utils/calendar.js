@@ -17,11 +17,11 @@ import $ from 'jquery';
  * @param {DatetimePicker} self
  */
 export function generateWeekdays(self) {
-    let lang = momentLocaleData(moment, self.options.locale),
+    let lang = momentLocaleData(moment, self.getLocale()),
         wekkdaysMin = '_weekdaysMin',
         week = '_week',
         days = lang[wekkdaysMin].slice(),
-        startDay = momentLocaleData(moment, self.options.locale)[week].dow,
+        startDay = momentLocaleData(moment, self.getLocale())[week].dow,
         endDays = days.splice(0, startDay),
         $days = $('.dtp-body-header-days', self.$picker),
         i;
@@ -56,7 +56,7 @@ export function generateCalendar(self, name, date) {
         j;
 
     today = moment();
-    today.localeData(self.options.locale);
+    today.localeData(self.getLocale());
     startDay = date.clone().startOf('month');
     currentDay = startDay.clone();
     $calendar = $('<div class="dtp-body-calendar" data-calendar-name="' + name + '"></div>');
