@@ -7,9 +7,9 @@
  * file that was distributed with this source code.
  */
 
-import DatetimePicker from '../datetime-picker';
+import FxpDatetimePicker from '../datetime-picker';
 
-DatetimePicker.locales = {
+FxpDatetimePicker.locales = {
     fr: {
         date:    'Date',
         time:    'Heure',

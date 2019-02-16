@@ -70,5 +70,14 @@ export default [
             ...iifeConfig.output,
             file: 'dist/datetime-picker.min.js'
         }
+    },
+    {
+        ...iifeConfig,
+        input: 'js/locale/fr.js',
+        external: [iifeConfig.external, '../datetime-picker'],
+        output: {
+            ...iifeConfig.output,
+            file: 'dist/locale/fr.js'
+        }
     }
 ];
